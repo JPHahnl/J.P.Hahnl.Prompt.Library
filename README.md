@@ -130,6 +130,19 @@ jobs:
 
 ---
 
+## 🔗 Shared Terminology
+
+Sys.Kernel maintains a **shared glossary** that defines its core terms, principles, and analyzer language.
+
+📘 See [SysKernel_Glossary.md](./SysKernel_Glossary.md)
+
+It ensures linguistic and philosophical coherence across prompts, analyzers, and documentation —  
+bridging AI semantics and human clarity.
+
+> *“Meaning precedes precision.”* — *Sys.Kernel Design Philosophy*
+
+---
+
 ## 📜 License
 
 © 2025 Josef Hahnl — Syntony Austria  

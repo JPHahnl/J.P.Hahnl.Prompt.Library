@@ -9,11 +9,24 @@ description: "Interactive index and documentation for all Sys.Kernel AI prompts 
 
 # 🧭 Sys.Kernel AI Prompt-Library Index
 
-> *“Architecture is not a collection of code — it’s a covenant of clarity.”*  
+> *“Architecture is not a collection of code — it’s a covenant of clarity.”*
 > — Josef Hahnl
 
-This library defines the **Sys.Kernel AI Framework of Prompts** — a unified system for architectural verification, diagnostics, performance optimization, security, and testing.  
+This library defines the **Sys.Kernel AI Framework of Prompts** — a unified system for architectural verification, diagnostics, performance optimization, security, and testing.
 Each prompt acts as a specialized **AI domain expert**, working in harmony under the **Sys.Kernel.Master.prompt.v4.0** orchestrator.
+
+---
+
+## 🔗 Shared Terminology
+
+All prompts, analyzers, and architectural documents use a **shared semantic foundation**, defined in:
+
+📘 [SysKernel_Glossary.md](./SysKernel_Glossary.md)
+
+This glossary unifies the vocabulary of the Sys.Kernel ecosystem —
+ensuring every concept, analyzer rule, and design pattern shares the same meaning.
+
+> **Related Concept:** The *Königsweg* principle underpins all definitions — *Clarity · Strength · Dignity.*
 
 ---
 
@@ -44,30 +57,30 @@ Each prompt acts as a specialized **AI domain expert**, working in harmony under
 
 ## 🧩 Analyzer Policy (Global)
 
-All prompts operate under the same analyzer suite and style policy:  
-- `Microsoft.CodeAnalysis.NetAnalyzers`  
-- `Meziantou.Analyzer`  
-- `Roslynator.Analyzers`  
-- `SonarAnalyzer.CSharp`  
-- `Microsoft.VisualStudio.Threading.Analyzers`  
-- `NetArchTest.Rules`  
-- `AsyncFixer`  
-- `PublicApiAnalyzers`  
+All prompts operate under the same analyzer suite and style policy:
+- `Microsoft.CodeAnalysis.NetAnalyzers`
+- `Meziantou.Analyzer`
+- `Roslynator.Analyzers`
+- `SonarAnalyzer.CSharp`
+- `Microsoft.VisualStudio.Threading.Analyzers`
+- `NetArchTest.Rules`
+- `AsyncFixer`
+- `PublicApiAnalyzers`
 
-**Rule:**  
-> 0 Warnings.  
-> No `#pragma` suppressions.  
+**Rule:**
+> 0 Warnings.
+> No `#pragma` suppressions.
 > Analyzer-clean by design.
 
 ---
 
 ## 🧰 Developer Workflow
 
-1. Start with **SysKernel.Master.prompt.v4.0.md** to define context.  
+1. Start with **SysKernel.Master.prompt.v4.0.md** to define context.
 2. Invoke specialized prompts for deeper focus:
-   - Architecture → Diagnostics → Performance → Security → Versioning.  
-3. Collect unified JSON + Markdown results via Master schema.  
-4. Verify in CI/CD pipeline with Analyzer enforcement.  
+   - Architecture → Diagnostics → Performance → Security → Versioning.
+3. Collect unified JSON + Markdown results via Master schema.
+4. Verify in CI/CD pipeline with Analyzer enforcement.
 5. Commit prompt results into `/Prompts/Results` for traceability.
 
 ---
@@ -107,12 +120,12 @@ All prompts operate under the same analyzer suite and style policy:
 
 ## 🧭 Philosophy
 
-> “The Sys.Kernel Prompt Library is not a tool — it’s a discipline.  
->  Each prompt is a principle, each analyzer a mirror, each build a promise.”  
+> “The Sys.Kernel Prompt Library is not a tool — it’s a discipline.
+>  Each prompt is a principle, each analyzer a mirror, each build a promise.”
 >  — Josef Hahnl / Syntony Austria
 
 ---
 
-© 2025 Josef Hahnl — Syntony Austria  
-**Sys.Kernel Prompt-Library Index v1.0**  
+© 2025 Josef Hahnl — Syntony Austria
+**Sys.Kernel Prompt-Library Index v1.0**
 Unified | Analyzer-Clean | Deterministic | Built for C# 13 / .NET 9

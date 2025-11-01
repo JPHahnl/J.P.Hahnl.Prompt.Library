@@ -1,7 +1,7 @@
 ---
 title: "NUnit 4.4 Test Fixture Generation Prompt"
 author: "Josef Hahnl"
-version: "1.1.0"
+version: "3.1.0"
 tags: [".NET 9", "C# 13", "NUnit 4.4", "Testing", "Automation", "Prompt"]
 created: "2025-10-31"
 updated: "2025-10-31"
