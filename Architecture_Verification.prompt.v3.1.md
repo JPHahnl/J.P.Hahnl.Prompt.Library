@@ -185,6 +185,83 @@ jobs:
 
 ---
 
+
+---
+
+## 🧩 Framework Pattern: Null Object Integration
+
+### Overview
+
+Sys.Kernel employs the **Null Object Pattern** as a default design principle for most framework components.  
+This ensures every service, handler, or factory can be safely invoked without requiring null-checks or exception guards.
+
+The pattern enforces **intentional emptiness** — predictable, analyzer-clean behavior in the absence of actual implementation.
+
+> *“Even nothingness should act with dignity.”* — *Sys.Kernel Design Principle*
+
+### Pattern Definition
+
+```csharp
+public interface IHandler
+{
+    void Handle();
+}
+
+public sealed class NullHandler : IHandler
+{
+    public static readonly IHandler Instance = new NullHandler();
+    private NullHandler() { }
+    public void Handle() { /* no-op */ }
+}
+```
+
+### Usage
+
+```csharp
+IHandler handler = GetHandler() ?? NullHandler.Instance;
+handler.Handle(); // always safe, always deterministic
+```
+
+### Analyzer Enforcement
+
+All Sys.Kernel analyzers must verify that:
+- Classes ending with `Null*` or prefixed with `Null` are **sealed, immutable, and singleton**.
+- Null-pattern implementations are marked with `[NullObject]` attribute.
+- No null-check branches (`if (x != null)`) exist in the corresponding usage scope.
+
+```csharp
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class NullObjectAttribute : Attribute { }
+```
+
+### Test Validation Rule (NetArchTest)
+
+```csharp
+[Test, Category(TestCategory.Architecture)]
+public void NullObject_Classes_ShouldBe_Sealed_And_Singleton()
+{
+    var result = Types.InAssemblies(AppDomain.CurrentDomain.GetAssemblies())
+        .That().HaveNameStartingWith("Null")
+        .Should().BeSealed()
+        .And().HaveFieldOfType("*", "Instance")
+        .GetResult();
+
+    Assert.That(result.IsSuccessful, Is.True, "NullObject pattern violation detected");
+}
+```
+
+### Design Benefits
+
+| Principle | Benefit |
+|:--|:--|
+| **Klarheit (Clarity)** | No ambiguous null checks — every call has meaning |
+| **Stärke (Strength)** | Predictable runtime paths, fewer exceptions |
+| **Würde (Dignity)** | Even absence behaves gracefully — intentional silence |
+
+The Null Object Pattern is now an **architectural invariant** of Sys.Kernel:  
+> Every component exists — even when it does nothing.
+
+---
 ## 🧮 Validation Metrics
 
 | Metric | Target |
